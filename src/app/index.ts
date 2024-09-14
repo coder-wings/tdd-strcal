@@ -1,11 +1,15 @@
 
 
-export function sum(a: number, b: number) {
-    return a + b;
+export function add(numbers: string): number {
+    if (numbers === "") {
+        return 0;
+    }
+
+    return Number(numbers);
 }
 
-let temp = sum(2,5);
-console.log(temp);
+let result = add("");
+console.log(result);
 
 
 

@@ -1,6 +1,12 @@
 
-import { sum } from "../app/index.ts";
+import { add } from "../app/index.ts";
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
+describe("string calculator should", () => {
+    test('return 0 if a empty is passed', () => {
+        expect(add("")).toBe(0);
+    });
+
+    test('return the number if one number is passed', () => {
+        expect(add("1")).toBe(1);
+    });
+})
