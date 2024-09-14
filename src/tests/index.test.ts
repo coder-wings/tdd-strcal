@@ -1,5 +1,5 @@
 
-import { add } from "../app/index.ts";
+import { add } from "../index";
 
 describe("string calculator should", () => {
     test('return 0 if a empty string is passed', () => {
@@ -17,4 +17,13 @@ describe("string calculator should", () => {
     test('return sum of three numbers if string, which has \n or , between numbers, is passed', () => {
         expect(add("1\n2,3")).toBe(6);
     });
+
+    test('return sum of numbers if string has custom delimiter', () => {
+        expect(add("//;;\n4;;5")).toBe(9);
+    });
+
+    test('throw exception if string have negative numbers in it', () => {
+        expect(()=>add("12,-20,\n30,-40")).toThrow("Negative numbers not allowed: -20,-40");
+    });
+    
 })
