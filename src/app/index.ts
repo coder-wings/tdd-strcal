@@ -4,11 +4,14 @@ export function add(numbers: string): number {
     if (numbers === "") {
         return 0;
     }
-
-    return Number(numbers);
+    let sum: number = 0;
+    for (let num of numbers.split(",")) {
+        sum = sum + Number(num);
+    }
+    return sum;
 }
 
-let result = add("");
+let result = add("1,2");
 console.log(result);
 
 
