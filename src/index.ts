@@ -18,7 +18,6 @@ export function add(numbers: string): number {
     if (negativeNumbers.length > 0) {
         throw new Error(`Negative numbers not allowed: ${negativeNumbers.join()}`);
     }
-
     return sum;
 }
 
