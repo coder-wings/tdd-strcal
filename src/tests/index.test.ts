@@ -2,6 +2,7 @@
 import { add } from "../index";
 
 describe("string calculator should", () => {
+
     test('return 0 if a empty string is passed', () => {
         expect(add("")).toBe(0);
     });
@@ -26,4 +27,8 @@ describe("string calculator should", () => {
         expect(()=>add("12,-20,\n30,-40")).toThrow("Negative numbers not allowed: -20,-40");
     });
     
+    test('ignore numbers greate than 1000', () => {
+        expect(add("//;;\n25;;125;;1001;;2000")).toBe(150);
+    });
+
 })

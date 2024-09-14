@@ -6,12 +6,12 @@ export function add(numbers: string): number {
     let sum: number = 0;
     let negativeNumbers: number[] = [];
 
-    sum = numsStr.split(delimiter).reduce((accumulator, currentValue, currentIndex) => {
+    sum = numsStr.split(delimiter).reduce((accumulator, currentValue) => {
 
         if (Number(currentValue) < 0) {
             negativeNumbers.push(Number(currentValue));
         }
-        return Number(accumulator) + Number(currentValue);
+        return Number(accumulator) + (Number(currentValue) <= 1000 ? Number(currentValue) : 0);
 
     }, sum);
 
@@ -22,29 +22,9 @@ export function add(numbers: string): number {
     return sum;
 }
 
-let result = add("1,2,4,5,6");
+let result = add("//***\n25***200***100");
 console.log(result);
 
 
-
-
-// if (numbers === "") {
-//     return 0;
-// }
-
-// let sum: number = 0;
-// for (let num of numbers.split(",")) {
-//     sum = sum + Number(num);
-// }
-// return sum;
-
-
-// function stringCalculator(...args: number[]) {
-//     return args.reduce((accumulator, currentValue) => {
-//         return accumulator += currentValue;
-//     }, 0);
-// }
-
-// let sum = stringCalculator(1,2,3,4,5,6,7,8);
 
 
