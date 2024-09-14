@@ -1,16 +1,16 @@
-
+import { separator } from "../utils/regex";
 
 export function add(numbers: string): number {
 
     let sum:number = 0;
-    sum = numbers.split(",").reduce((accumulator, currentValue)=>{
+    sum = numbers.split(separator).reduce((accumulator, currentValue)=>{
         return Number(accumulator) + Number(currentValue);
     }, sum);
 
     return sum;
 }
 
-let result = add("1,2,4,5");
+let result = add("1\n2\n4,5");
 console.log(result);
 
 
